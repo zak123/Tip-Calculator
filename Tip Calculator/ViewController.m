@@ -27,9 +27,17 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)stepperChanged:(id)sender {
+    
+}
 
 - (IBAction)sliderChanged:(id)sender {
     
+    [self recalculateAndUpdateView];
+    
+}
+
+-(void) recalculateAndUpdateView {
     float tipInDollars;
     float totalOwed;
     int inputInt;
@@ -37,6 +45,8 @@
     
     inputInt = [_inputText.text intValue];
     
+    
+    // Round value of UISlider to keep values clean and iterate between integers
     
     CGFloat value = [_tipSlider value];
     
@@ -47,32 +57,33 @@
         [_tipSlider setValue:roundValue];
     }
     
-    
+    // Convert slider value into .xx for percentage calculation
     
     tipInDollars = _tipSlider.value/100 * inputInt;
     
+    // Percentage calculation
     
     totalOwed = inputInt + tipInDollars;
+    
+    // Set Labels
     
     NSString *newRoundValue = [NSString stringWithFormat:@"%.00f%%",roundValue];
     
     
     _tipPercent.text = newRoundValue;
-
+    
     _totalOwed.text = [NSString stringWithFormat:@"$%.02f",totalOwed];
     _tipAmount.text = [NSString stringWithFormat:@"$%.02f",tipInDollars];
-    
     
     
 }
 
 
-
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     NSLog(@"You entered %@",self.inputText.text);
-
+    
+    
     
     [self.inputText resignFirstResponder];
     return YES;
@@ -89,4 +100,9 @@
 }
 
 
+- (IBAction)amountFieldChanged:(id)sender {
+    
+    [self recalculateAndUpdateView];
+    
+}
 @end

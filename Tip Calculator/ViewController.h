@@ -19,5 +19,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *tipPercent;
 @property (strong, nonatomic) IBOutlet UILabel *tipAmount;
 
+
+- (IBAction)amountFieldChanged:(id)sender;
+
 @end
 

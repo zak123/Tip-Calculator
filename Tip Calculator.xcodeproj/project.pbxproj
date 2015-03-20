@@ -14,6 +14,8 @@
 		B6A87DAA1ABCA2980006878E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6A87DA91ABCA2980006878E /* Images.xcassets */; };
 		B6A87DAD1ABCA2980006878E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A87DAB1ABCA2980006878E /* LaunchScreen.xib */; };
 		B6A87DB91ABCA2980006878E /* Tip_CalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A87DB81ABCA2980006878E /* Tip_CalculatorTests.m */; };
+		B6A87DC71ABCD98B0006878E /* DataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A87DC61ABCD98B0006878E /* DataHolder.m */; };
+		B6A87DCA1ABCDC540006878E /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A87DC91ABCDC540006878E /* OptionsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		B6A87DB21ABCA2980006878E /* Tip CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tip CalculatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A87DB71ABCA2980006878E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6A87DB81ABCA2980006878E /* Tip_CalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tip_CalculatorTests.m; sourceTree = "<group>"; };
+		B6A87DC51ABCD98B0006878E /* DataHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataHolder.h; path = ../DataHolder.h; sourceTree = "<group>"; };
+		B6A87DC61ABCD98B0006878E /* DataHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataHolder.m; path = ../DataHolder.m; sourceTree = "<group>"; };
+		B6A87DC81ABCDC540006878E /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		B6A87DC91ABCDC540006878E /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +87,15 @@
 		B6A87D9B1ABCA2980006878E /* Tip Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				B6A87DC51ABCD98B0006878E /* DataHolder.h */,
+				B6A87DC61ABCD98B0006878E /* DataHolder.m */,
 				B6A87DA01ABCA2980006878E /* AppDelegate.h */,
 				B6A87DA11ABCA2980006878E /* AppDelegate.m */,
 				B6A87DA31ABCA2980006878E /* ViewController.h */,
 				B6A87DA41ABCA2980006878E /* ViewController.m */,
 				B6A87DA61ABCA2980006878E /* Main.storyboard */,
+				B6A87DC81ABCDC540006878E /* OptionsViewController.h */,
+				B6A87DC91ABCDC540006878E /* OptionsViewController.m */,
 				B6A87DA91ABCA2980006878E /* Images.xcassets */,
 				B6A87DAB1ABCA2980006878E /* LaunchScreen.xib */,
 				B6A87D9C1ABCA2980006878E /* Supporting Files */,
@@ -221,7 +231,9 @@
 			files = (
 				B6A87DA51ABCA2980006878E /* ViewController.m in Sources */,
 				B6A87DA21ABCA2980006878E /* AppDelegate.m in Sources */,
+				B6A87DCA1ABCDC540006878E /* OptionsViewController.m in Sources */,
 				B6A87D9F1ABCA2980006878E /* main.m in Sources */,
+				B6A87DC71ABCD98B0006878E /* DataHolder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +426,7 @@
 				B6A87DBE1ABCA2980006878E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B6A87DBF1ABCA2980006878E /* Build configuration list for PBXNativeTarget "Tip CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +435,7 @@
 				B6A87DC11ABCA2980006878E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

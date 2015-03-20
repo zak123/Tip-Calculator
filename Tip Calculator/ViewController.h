@@ -12,12 +12,13 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *inputText;
 
-@property (strong, nonatomic) IBOutlet UISlider *tipSlider;
+//@property (strong, nonatomic) IBOutlet UISlider *tipSlider;
 
 @property (strong, nonatomic) IBOutlet UITextField *totalOwed;
 
 @property (strong, nonatomic) IBOutlet UILabel *tipPercent;
 @property (strong, nonatomic) IBOutlet UILabel *tipAmount;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *tipSelector;
 
 
 - (IBAction)amountFieldChanged:(id)sender;

@@ -16,7 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [_inputText becomeFirstResponder];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,22 +33,32 @@
     float tipInDollars;
     float totalOwed;
     int inputInt;
-    int tipSliderIntPercent = _tipSlider.value * 100;
-    
-    
-    NSString *convertToString = [NSString stringWithFormat:@"%d%%", tipSliderIntPercent];
-    self.tipPercent.text = convertToString;
     
     
     inputInt = [_inputText.text intValue];
     
     
+    CGFloat value = [_tipSlider value];
     
-    tipInDollars = _tipSlider.value * inputInt;
+    CGFloat roundValue = roundf(value);
+    
+    if (value != roundValue) {
+        
+        [_tipSlider setValue:roundValue];
+    }
+    
+    
+    
+    tipInDollars = _tipSlider.value/100 * inputInt;
     
     
     totalOwed = inputInt + tipInDollars;
     
+    NSString *newRoundValue = [NSString stringWithFormat:@"%.00f%%",roundValue];
+    
+    
+    _tipPercent.text = newRoundValue;
+
     _totalOwed.text = [NSString stringWithFormat:@"$%.02f",totalOwed];
     _tipAmount.text = [NSString stringWithFormat:@"$%.02f",tipInDollars];
     
@@ -54,13 +68,11 @@
 
 
 
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     NSLog(@"You entered %@",self.inputText.text);
-    
-    
-    
-    
+
     
     [self.inputText resignFirstResponder];
     return YES;

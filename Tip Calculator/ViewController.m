@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 cghcapital. All rights reserved.
 //
 
+#import "DataHolder.h"
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -19,7 +20,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [_inputText becomeFirstResponder];
+//    [_inputText becomeFirstResponder];
+    [self recalculateAndUpdateView];
+
 
 }
 
@@ -51,13 +54,13 @@
     
     
     if (self.tipSelector.selectedSegmentIndex == 0) {
-        percentage = 10;
+        percentage = [DataHolder sharedInstance].badService;
     }
     if (self.tipSelector.selectedSegmentIndex == 1) {
-        percentage = 20;
+        percentage = [DataHolder sharedInstance].averageService;
     }
     if (self.tipSelector.selectedSegmentIndex == 2) {
-        percentage = 30;
+        percentage = [DataHolder sharedInstance].goodService;
     }
     
     inputInt = [_inputText.text intValue];

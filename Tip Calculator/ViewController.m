@@ -27,11 +27,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)stepperChanged:(id)sender {
-    
-}
 
-- (IBAction)sliderChanged:(id)sender {
+
+//- (IBAction)sliderChanged:(id)sender {
+//    
+//    [self recalculateAndUpdateView];
+//    
+//}
+
+
+- (IBAction)tipCalculatorChanged:(id)sender {
     
     [self recalculateAndUpdateView];
     
@@ -41,33 +46,49 @@
     float tipInDollars;
     float totalOwed;
     int inputInt;
+    int percentage = 0;
     
+    
+    
+    if (self.tipSelector.selectedSegmentIndex == 0) {
+        percentage = 10;
+    }
+    if (self.tipSelector.selectedSegmentIndex == 1) {
+        percentage = 20;
+    }
+    if (self.tipSelector.selectedSegmentIndex == 2) {
+        percentage = 30;
+    }
     
     inputInt = [_inputText.text intValue];
     
     
     // Round value of UISlider to keep values clean and iterate between integers
     
-    CGFloat value = [_tipSlider value];
-    
-    CGFloat roundValue = roundf(value);
-    
-    if (value != roundValue) {
-        
-        [_tipSlider setValue:roundValue];
-    }
+//    CGFloat value = [_tipSlider value];
+//    
+//    CGFloat roundValue = roundf(value);
+//    
+//    if (value != roundValue) {
+//        
+//        [_tipSlider setValue:roundValue];
+//    }
     
     // Convert slider value into .xx for percentage calculation
     
-    tipInDollars = _tipSlider.value/100 * inputInt;
+    float percentageFloat = (float) percentage;
+    
+    tipInDollars = percentageFloat/100 * inputInt;
     
     // Percentage calculation
+    
+    
     
     totalOwed = inputInt + tipInDollars;
     
     // Set Labels
     
-    NSString *newRoundValue = [NSString stringWithFormat:@"%.00f%%",roundValue];
+    NSString *newRoundValue = [NSString stringWithFormat:@"%d%%",percentage];
     
     
     _tipPercent.text = newRoundValue;

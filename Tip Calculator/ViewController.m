@@ -44,11 +44,15 @@
     [self recalculateAndUpdateView];
     
 }
+- (IBAction)numberOfPeopleChanged:(id)sender {
+    [self recalculateAndUpdateView];
+}
 
 -(void) recalculateAndUpdateView {
     float tipInDollars;
     float totalOwed;
     int inputInt;
+    int numberOfPeople;
     int percentage = 0;
     
     
@@ -64,7 +68,7 @@
     }
     
     inputInt = [_inputText.text intValue];
-    
+    numberOfPeople = [_numberOfPeopleInput.text intValue];
     
     // Round value of UISlider to keep values clean and iterate between integers
     
@@ -89,14 +93,30 @@
     
     totalOwed = inputInt + tipInDollars;
     
+
+    
     // Set Labels
     
     NSString *newRoundValue = [NSString stringWithFormat:@"%d%%",percentage];
     
     
+    if (numberOfPeople > 1) {
+        totalOwed = totalOwed / numberOfPeople;
+        
+        _totalOwed.text = [NSString stringWithFormat:@"$%.02f", totalOwed];
+        
+      
+    }
+    else {
+            _totalOwed.text = [NSString stringWithFormat:@"$%.02f",totalOwed];
+    }
+    
+    
     _tipPercent.text = newRoundValue;
     
-    _totalOwed.text = [NSString stringWithFormat:@"$%.02f",totalOwed];
+    
+    
+
     _tipAmount.text = [NSString stringWithFormat:@"$%.02f",tipInDollars];
     
     

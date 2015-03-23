@@ -15,6 +15,7 @@
 //@property (strong, nonatomic) IBOutlet UISlider *tipSlider;
 
 @property (strong, nonatomic) IBOutlet UITextField *totalOwed;
+@property (strong, nonatomic) IBOutlet UITextField *numberOfPeopleInput;
 
 @property (strong, nonatomic) IBOutlet UILabel *tipPercent;
 @property (strong, nonatomic) IBOutlet UILabel *tipAmount;

@@ -16,13 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Bill Amount:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajn-5J-G1r">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Amount:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajn-5J-G1r">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Superclarendon-Light" family="Superclarendon" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="114" y="28" width="172.5" height="21"/>
+                                    <rect key="frame" x="16" y="28" width="172.5" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRG-By-M8K">
@@ -75,10 +75,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="142" y="57" width="116" height="46"/>
+                                    <rect key="frame" x="16" y="57" width="116" height="46"/>
                                 </variation>
                                 <connections>
                                     <action selector="amountFieldChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="ELc-AN-a55"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="line" textAlignment="center" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="nak-5l-Clb">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="268" y="57" width="116" height="46"/>
+                                </variation>
+                                <connections>
+                                    <action selector="amountFieldChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="uFu-Nx-fP7"/>
+                                    <action selector="numberOfPeopleChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="2vN-cw-eOu"/>
                                 </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fda-He-6xY">
@@ -103,6 +115,15 @@
                                     <rect key="frame" x="127" y="331" width="189" height="97"/>
                                 </variation>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Of People:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6P-Jv-bNZ">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Superclarendon-Light" family="Superclarendon" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="268" y="28" width="172.5" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -114,8 +135,10 @@
                                 <exclude reference="k40-1e-4li"/>
                                 <exclude reference="YO9-A8-HKk"/>
                                 <exclude reference="SA8-N2-4LL"/>
+                                <exclude reference="nak-5l-Clb"/>
                                 <exclude reference="fda-He-6xY"/>
                                 <exclude reference="ohQ-LQ-dtW"/>
+                                <exclude reference="v6P-Jv-bNZ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -127,14 +150,17 @@
                                 <include reference="k40-1e-4li"/>
                                 <include reference="YO9-A8-HKk"/>
                                 <include reference="SA8-N2-4LL"/>
+                                <include reference="nak-5l-Clb"/>
                                 <include reference="fda-He-6xY"/>
                                 <include reference="ohQ-LQ-dtW"/>
+                                <include reference="v6P-Jv-bNZ"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main Menu" id="UXN-jl-T8u"/>
                     <connections>
                         <outlet property="inputText" destination="SA8-N2-4LL" id="xgO-vh-zND"/>
+                        <outlet property="numberOfPeopleInput" destination="nak-5l-Clb" id="awn-3P-a4s"/>
                         <outlet property="tipAmount" destination="YO9-A8-HKk" id="o6S-Ku-ZQm"/>
                         <outlet property="tipPercent" destination="eyu-mb-4EK" id="nJ1-h3-9WB"/>
                         <outlet property="tipSelector" destination="fda-He-6xY" id="Qot-N9-Phd"/>
